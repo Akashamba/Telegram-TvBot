@@ -1,8 +1,7 @@
 import json
 import requests
 import time
-from back import get_deets
-from try2 import get_str
+from back import get_deets, get_str
 
 
 TOKEN = "590062730:AAFjKAu_vCo-_FtDy83D2CAGtMla6hLHq-Q"
