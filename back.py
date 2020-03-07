@@ -1,10 +1,11 @@
 import json
 import requests
 
+
 def get_deets(name):
     deets = get_url("http://www.omdbapi.com/?apikey=56069cac&t="+name)
     js = json.loads(deets)
-    return js
+    return get_str(js)
 
 
 def get_url(url):
@@ -22,6 +23,3 @@ def get_str(movie):
     for i in range(len(l)):
         st = st + l[i] + "\n"
     return st
-
-
-print(get_str(get_deets("Contagion")))
