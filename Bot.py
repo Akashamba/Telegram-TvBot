@@ -1,7 +1,7 @@
 import json
 import requests
 import time
-from try2 import get_str
+from try2 import get_deets
 
 
 TOKEN = "590062730:AAFjKAu_vCo-_FtDy83D2CAGtMla6hLHq-Q"
@@ -35,7 +35,7 @@ def get_last_chat_id_and_text(updates):
     if text == "/start":
         result = "Welcome!"
     else:
-        result = get_str(text) # reply message
+        result = get_deets(text) # reply message
 
     chat_id = updates["result"][last_update]["message"]["chat"]["id"]
     return result, chat_id
