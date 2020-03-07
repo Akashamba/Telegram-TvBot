@@ -15,11 +15,24 @@ def get_url(url):
 
 
 def get_str(movie):
-    l = []
     for i in range(len(movie)):
-        l.append(str(list(movie.keys())[i]) + " : " + str(movie[list(movie.keys())[i]]))
+        if movie[list(movie.keys())[i]] == "N/A":
+            movie[list(movie.keys())[i]] = "Not Available"
+
+    req = ['Title', 'Type', 'Year', 'Rated', 'Released', 'Runtime', 'Genre', 'Director', 'Writer', 'Actors', 'Plot',
+           'Language', 'Awards']
+    l = []
+    for i in range(len(req)):
+        if req[i] == 'Type':
+            l.append("\n" + str(req[i]) + " : " + str(movie[req[i]]).capitalize())
+        else:
+            l.append("\n" + str(req[i]) + " : " + str(movie[req[i]]))
 
     st = ""
     for i in range(len(l)):
         st = st + l[i] + "\n"
-    return st
+    return st + "\nFind more at imdb.com"
+
+
+get_deets("contagion")
+
