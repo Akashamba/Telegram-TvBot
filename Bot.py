@@ -1,7 +1,7 @@
 import json
 import requests
 import time
-from try2 import get_deets
+from back import get_deets
 
 
 TOKEN = "590062730:AAFjKAu_vCo-_FtDy83D2CAGtMla6hLHq-Q"
@@ -73,7 +73,8 @@ def reply(updates):
             send_message(text, chat)
 
         except Exception as e:
-            print(e)
+            text = "Movie not found."
+            send_message(text, chat)
 
 
 if __name__ == '__main__':
