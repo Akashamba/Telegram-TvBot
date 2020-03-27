@@ -4,7 +4,7 @@ import time
 from back import get_deets
 
 
-TOKEN = "590062730:AAFjKAu_vCo-_FtDy83D2CAGtMla6hLHq-Q"
+TOKEN = "token"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
